@@ -1,0 +1,5 @@
+{
+  "name": "file-trail",
+  "version": "0.1.0",
+  "description": "Which file each read, write, edit, list, glob and search tool touched, with the time and whether it failed: one line per turn, a /file-trail command and a local file."
+}

@@ -1,0 +1,31 @@
+{
+  "hooks": {
+    "AfterTool": [
+      {
+        "matcher": "^(read_file|read_many_files|write_file|replace|list_directory|glob|grep_search)$",
+        "hooks": [
+          {
+            "type": "command",
+            "name": "file-trail-record",
+            "description": "Appends one line per file the tool touched to ~/.gemini/file-trail/<session>.jsonl",
+            "command": "node ${extensionPath}${/}scripts${/}trail.mjs",
+            "timeout": 5000
+          }
+        ]
+      }
+    ],
+    "AfterAgent": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "name": "file-trail-summary",
+            "description": "Shows one line per turn that touched files: what changed and how many were read",
+            "command": "node ${extensionPath}${/}scripts${/}trail.mjs",
+            "timeout": 5000
+          }
+        ]
+      }
+    ]
+  }
+}

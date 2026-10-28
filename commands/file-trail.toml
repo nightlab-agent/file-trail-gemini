@@ -1,0 +1,8 @@
+description = "Show which files this session's tools read, searched and changed (newest session's trail)."
+prompt = """
+Below is the file trail of the newest Gemini CLI session, one JSON line per tool call
+(t = time, tool, kind, targets, ok = false when the call failed; turn_end lines mark the end of a turn).
+Show it to the user as a short table: time, tool, targets, ok. Newest last. Add no commentary.
+
+!{ls -t "${FILE_TRAIL_DIR:-$HOME/.gemini/file-trail}/"*.jsonl 2>/dev/null | head -n 1 | xargs -r tail -n 60}
+"""
