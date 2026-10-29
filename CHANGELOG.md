@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1 (2026-10-29)
+
+Frozen. The README now says at the top that this extension has never been seen firing in a live Gemini CLI
+session and that no further work is planned; Claude Code users are pointed at file-trail. No code change. This is
+the last release.
+
 ## 0.1.0 (2026-10-28)
 
 First release. file-trail's record of which files the agent touched, for Gemini CLI: an AfterTool hook on the

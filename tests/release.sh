@@ -1,5 +1,5 @@
 #!/bin/sh
-# Release gate: Gemini CLI validates the manifest, hooks/hooks.json parses and
+# Release check: Gemini CLI validates the manifest, hooks/hooks.json parses and
 # points at a script that exists (validate does not read hooks.json), the tests
 # pass, and the version string is the same in gemini-extension.json, the
 # changelog's newest release and the README. Exit non-zero on any of them.
@@ -9,7 +9,7 @@ set -e
 cd "$(dirname "$0")/.."
 GEMINI="${GEMINI:-$(command -v gemini || true)}"
 if [ -z "$GEMINI" ] || [ ! -x "$GEMINI" ]; then
-  echo "release gate: no gemini binary (set GEMINI=/path/to/gemini)" >&2
+  echo "release check: no gemini binary (set GEMINI=/path/to/gemini)" >&2
   exit 1
 fi
 "$GEMINI" extensions validate .
@@ -35,4 +35,4 @@ if len(set(versions.values())) != 1:
 print(f"version check: all three say {manifest}")
 PY
 node --test tests/test.mjs
-echo "release gate: validate, hooks check, tests and version check passed"
+echo "release check: validate, hooks check, tests and version check passed"

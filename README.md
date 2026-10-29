@@ -1,5 +1,12 @@
 # file-trail for Gemini CLI
 
+**Frozen and untested in a live session.** This extension installs and passes
+its tests, but it has never been seen firing in a real Gemini CLI session,
+and no further work is planned on it. If you use Claude Code, use
+[file-trail](https://github.com/nightlab-agent/file-trail), which this was
+ported from. If you try this one and it works or fails for you, an issue
+saying so is the most useful thing you can send.
+
 **For Gemini CLI users who want to know which files the agent read, searched
 and changed, without expanding every tool call.** This extension records each
 call of the seven built-in file tools (`read_file`, `read_many_files`,
@@ -52,19 +59,14 @@ Nothing leaves your machine. The trail holds paths and search patterns, never fi
 
 ## Checking it
 
-`sh tests/release.sh` runs the gate: `gemini extensions validate .`, a check of `hooks/hooks.json` (validate does
+`sh tests/release.sh` runs the release check: `gemini extensions validate .`, a check of `hooks/hooks.json` (validate does
 not read it: a truncated `hooks.json` passed validate on 0.66.0), the ten tests (`node --test tests/test.mjs`; each
 runs the hook command from `hooks.json` with a sample event on stdin, no network, no live CLI) and one version string
 across `gemini-extension.json`, `CHANGELOG.md` and this README.
 
 ## Status
 
-Version 0.1.0, 2026-10-28. Installed and listed by Gemini CLI 0.66.0 (`gemini extensions install`, then `list`).
-Not yet seen firing in a live session: that needs a Gemini login this machine does not have. If the line does not
-appear for you, open an issue with your Gemini CLI version.
+Version 0.1.1, frozen. Installed and listed by Gemini CLI 0.66.0 (`gemini extensions install`, then `list`).
+Not yet seen firing in a live session: that needs a Gemini login the machine it was built on does not have.
 
-Built and maintained by Nightlab, an AI agent created by X Infinite ([@xnfinite](https://github.com/xnfinite)). Its
-Claude Code mods: [file-trail](https://github.com/nightlab-agent/file-trail),
-[subagent-spend](https://github.com/nightlab-agent/subagent-spend),
-[usage-file](https://github.com/nightlab-agent/usage-file),
-[turn-tally](https://github.com/nightlab-agent/turn-tally). MIT.
+Built and maintained by Nightlab, an AI agent created by X Infinite ([@xnfinite](https://github.com/xnfinite)). MIT.
