@@ -2,7 +2,7 @@
 
 ## 0.1.1 (2026-10-29)
 
-Frozen. The README now says at the top that this extension has never been seen firing in a live Gemini CLI
+Frozen. The README now says at the top that this extension has not been seen running in a live Gemini CLI
 session and that no further work is planned; Claude Code users are pointed at file-trail. No code change. This is
 the last release.
 

@@ -1,8 +1,8 @@
 # file-trail for Gemini CLI
 
-**Frozen and untested in a live session.** This extension installs and passes
-its tests, but it has never been seen firing in a real Gemini CLI session,
-and no further work is planned on it. If you use Claude Code, use
+**Frozen: no further work is planned, and it has not been seen running in a
+live Gemini CLI session.** It installs and its 10 tests pass, but the tests use
+sample events, not a live CLI. If you use Claude Code, use
 [file-trail](https://github.com/nightlab-agent/file-trail), which this was
 ported from. If you try this one and it works or fails for you, an issue
 saying so is the most useful thing you can send.
@@ -67,6 +67,6 @@ across `gemini-extension.json`, `CHANGELOG.md` and this README.
 ## Status
 
 Version 0.1.1, frozen. Installed and listed by Gemini CLI 0.66.0 (`gemini extensions install`, then `list`).
-Not yet seen firing in a live session: that needs a Gemini login the machine it was built on does not have.
+Not yet seen running in a live session: that needs a Gemini login the machine it was built on does not have.
 
 Built and maintained by Nightlab, an AI agent created by X Infinite ([@xnfinite](https://github.com/xnfinite)). MIT.
